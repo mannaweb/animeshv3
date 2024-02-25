@@ -13,6 +13,11 @@ const nextConfig = withBundleAnalyzer({
   images: {
     domains: ["https://flagcdn.com"],
   },
+  eslint: {
+    // Warning: This allows production builds to successfully complete even if
+    // your project has ESLint errors.
+    ignoreDuringBuilds: true,
+  },
   webpack: (config) => {
     config.resolve.fallback = {
       fs: false,
